@@ -15,6 +15,7 @@
 		0A41C646250CEC03004CFD98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A41C644250CEC03004CFD98 /* LaunchScreen.storyboard */; };
 		0A41C651250CEC03004CFD98 /* kirikae_testTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A41C650250CEC03004CFD98 /* kirikae_testTests.swift */; };
 		0A41C65C250CEC03004CFD98 /* kirikae_testUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A41C65B250CEC03004CFD98 /* kirikae_testUITests.swift */; };
+		0A41C66A250CEC4B004CFD98 /* Tablet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A41C669250CEC4B004CFD98 /* Tablet.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		0A41C657250CEC03004CFD98 /* kirikae_testUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kirikae_testUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A41C65B250CEC03004CFD98 /* kirikae_testUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kirikae_testUITests.swift; sourceTree = "<group>"; };
 		0A41C65D250CEC03004CFD98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A41C669250CEC4B004CFD98 /* Tablet.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tablet.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				0A41C63B250CEC02004CFD98 /* SceneDelegate.swift */,
 				0A41C63D250CEC02004CFD98 /* ViewController.swift */,
 				0A41C63F250CEC02004CFD98 /* Main.storyboard */,
+				0A41C669250CEC4B004CFD98 /* Tablet.storyboard */,
 				0A41C642250CEC03004CFD98 /* Assets.xcassets */,
 				0A41C644250CEC03004CFD98 /* LaunchScreen.storyboard */,
 				0A41C647250CEC03004CFD98 /* Info.plist */,
@@ -232,6 +235,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A41C66A250CEC4B004CFD98 /* Tablet.storyboard in Resources */,
 				0A41C646250CEC03004CFD98 /* LaunchScreen.storyboard in Resources */,
 				0A41C643250CEC03004CFD98 /* Assets.xcassets in Resources */,
 				0A41C641250CEC02004CFD98 /* Main.storyboard in Resources */,
@@ -437,6 +441,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZE359G84HY;
 				INFOPLIST_FILE = kirikae_test/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -455,6 +460,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZE359G84HY;
 				INFOPLIST_FILE = kirikae_test/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
