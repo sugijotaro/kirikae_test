@@ -10,14 +10,45 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
+    /// 端末の種類
+    static var deviceType = 0
+    /// 端末の種類(iPhone、iPad)
+    enum DeviceType: Int {
+        case phone = 0,
+        pad = 1
+    }
+    
     var window: UIWindow?
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let scene = (scene as? UIWindowScene) else { return }
+        switch UIDevice.current.userInterfaceIdiom {
+        case .pad:
+            print("iPadだよ！")
+            self.window = UIWindow(windowScene: scene)
+            let storyboard = UIStoryboard(name: "Tablet", bundle: nil)
+            print(storyboard)
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "rootView")
+            print(initialViewController)
+            self.window?.rootViewController = initialViewController
+            print(self.window?.rootViewController)
+            // iPad用のstoryboardを使用
+            self.window?.makeKeyAndVisible()
+        case .phone:
+            print("iPhoneだよ！")
+            self.window = UIWindow(windowScene: scene)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            print(storyboard)
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "rootView")
+            print(initialViewController)
+            self.window?.rootViewController = initialViewController
+            print(self.window?.rootViewController)
+            // iPhone用のstoryboardを使用
+            self.window?.makeKeyAndVisible()
+        default: break
+        }
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

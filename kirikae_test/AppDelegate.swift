@@ -11,40 +11,7 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    /// 端末の種類
-    static var deviceType = 0
-    /// 端末の種類(iPhone、iPad)
-    enum DeviceType: Int {
-        case phone = 0,
-        pad = 1
-    }
-    
-    var window: UIWindow?
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        if AppDelegate.deviceType == DeviceType.pad.rawValue {
-            print("iPadだよ！")
-            self.window = UIWindow(frame: UIScreen.main.bounds)
-            let storyboard = UIStoryboard(name: "Tablet", bundle: nil)
-            print(storyboard)
-            let initialViewController = storyboard.instantiateViewController(withIdentifier: "rootView")
-            print(initialViewController)
-            self.window?.rootViewController = initialViewController
-            print(self.window?.rootViewController)
-            // iPad用のstoryboardを使用
-            self.window?.makeKeyAndVisible()
-        } else {
-            print("iPhoneだよ！")
-            self.window = UIWindow(frame: UIScreen.main.bounds)
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            print(storyboard)
-            let initialViewController = storyboard.instantiateViewController(withIdentifier: "rootView")
-            print(initialViewController)
-            self.window?.rootViewController = initialViewController
-            print(self.window?.rootViewController)
-            // iPhone用のstoryboardを使用
-            self.window?.makeKeyAndVisible()
-        }
         return true
     }
     
@@ -53,11 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         switch UIDevice.current.userInterfaceIdiom {
         case .phone:
             // iPhoneは縦向き固定
-            AppDelegate.deviceType = DeviceType.phone.rawValue
+            SceneDelegate.deviceType = SceneDelegate.DeviceType.phone.rawValue
             return UIInterfaceOrientationMask.portrait
         case .pad:
             // iPadは横向き固定
-            AppDelegate.deviceType = DeviceType.pad.rawValue
+            SceneDelegate.deviceType = SceneDelegate.DeviceType.pad.rawValue
             return UIInterfaceOrientationMask.landscape
         default:
             return UIInterfaceOrientationMask.portrait
